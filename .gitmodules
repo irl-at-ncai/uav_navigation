@@ -1,0 +1,6 @@
+[submodule "frontier_based_exploration"]
+	path = frontier_based_exploration
+	url = https://github.com/saifullah3396/frontier_based_exploration
+[submodule "vfh3d"]
+	path = vfh3d
+	url = https://github.com/saifullah3396/vfh3d
