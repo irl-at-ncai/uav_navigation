@@ -1,0 +1,24 @@
+<launch>
+    <arg name="world" default="$(find px4)/Tools/sitl_gazebo/worlds/small_indoor_scenario.world" />
+    <arg name="gui" default="false" />
+    <arg name="debug" default="false" />
+    <arg name="frame_id"  default="map"/>
+    <arg name="base_frame_id" default="base_link" />
+    <arg name="octomap_resolution"  default="0.15"/>
+    <arg name="point_cloud_topic" default="/camera/depth/points"/>
+    <arg name="start_octomap_server" default="false"/>
+
+    <include file="$(find mavros_moveit_avoidance)/launch/px4_indoor_iris_depth.launch">
+      <arg name="frame_id" value="$(arg frame_id)"/>
+      <arg name="point_cloud_topic" value="$(arg point_cloud_topic)"/>
+      <arg name="octomap_resolution" value="$(arg octomap_resolution)"/>
+      <arg name="start_octomap_server" value="$(arg start_octomap_server)"/>
+    </include>
+
+    <include file="$(find frontier_based_exploration)/launch/frontier_based_exploration.launch">
+      <arg name="frame_id" value="$(arg frame_id)" />
+      <arg name="base_frame_id" value="$(arg base_frame_id)" />
+      <arg name="octomap_resolution" value="$(arg octomap_resolution)" />
+      <arg name="point_cloud_topic" value="$(arg point_cloud_topic)" />
+    </include>
+</launch>
