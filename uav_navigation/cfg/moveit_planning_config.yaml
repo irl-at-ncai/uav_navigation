@@ -1,0 +1,14 @@
+move_group: mavros_uav
+workspace:
+  min_x: -10.0
+  min_y: -10.0
+  min_z: -10.0
+  max_x: 10.0
+  max_y: 10.0
+  max_z: 5.0
+  
+planning:
+  max_plan_time: 1.0
+  max_plan_attempts: 5
+  max_vel_scale: 1.0
+  max_acc_scale: 1.0
