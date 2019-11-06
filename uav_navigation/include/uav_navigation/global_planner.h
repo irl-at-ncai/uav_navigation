@@ -14,10 +14,10 @@
 namespace uav_navigation
 {
 
-class NavigationPipeline
+class GlobalPlanner
 {
 public:
-	NavigationPipeline() {
+	GlobalPlanner() {
 		spinner_.start();
 		setupMoveGroup();
 		geometry_msgs::Pose target_pose1;
@@ -31,7 +31,7 @@ public:
 		}
 	}
 	
-	~NavigationPipeline() {
+	~GlobalPlanner() {
 	}
 
 	void setupMoveGroup() {
