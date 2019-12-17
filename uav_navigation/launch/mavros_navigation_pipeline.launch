@@ -1,5 +1,6 @@
 <launch>    
-    <node name="mavros_navigation_pipeline" pkg="uav_navigation" type="uav_navigation_node" output="screen">
-      <rosparam command="load" file="$(find uav_navigation)/cfg/moveit_planning_config.yaml" />
-    </node>
+  <arg name="output" default="log" />
+  <node name="mavros_navigation_pipeline" pkg="uav_navigation" type="uav_navigation_node" output="$(arg output)">
+    <rosparam command="load" file="$(find uav_navigation)/cfg/moveit_planning_config.yaml" />
+  </node>
 </launch>
